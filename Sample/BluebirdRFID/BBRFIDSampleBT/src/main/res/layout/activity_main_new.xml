@@ -1,0 +1,428 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="co.kr.bluebird.rfid.app.bbrfidbtdemo.MainActivity" >
+
+    <androidx.drawerlayout.widget.DrawerLayout
+	    android:id="@+id/drawer_layout"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+
+        <!-- START Main FrameLayout  -->
+        <FrameLayout 
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <!-- START Main LinearLayout  -->
+            <LinearLayout
+                android:id="@+id/ui_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <!-- START CONNECTIVITY/NFC/QR CONNECT LinearLayout  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- START  CONNECT Fragment     -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/connect_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_connectivity" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_connect_str" >
+
+                        </TextView>
+
+                    </FrameLayout>
+                    <!-- END  CONNECT Fragment     -->
+
+                    <!-- START NFC/QR Fragment   -->
+                    <FrameLayout
+                        android:id="@+id/nfc_frame"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:id="@+id/nfc_connect_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_connectivity">
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:text="@string/connect_nfc"
+                            android:textStyle="bold"></TextView>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:id="@+id/qr_connect_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_connectivity"></ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:text="@string/connect_qr"
+                            android:gravity="center"
+                            android:textStyle="bold"></TextView>
+                    </FrameLayout>
+                    <!-- EMD NFC/QR Fragment     -->
+                </LinearLayout>
+                <!-- END CONNECTIVITY/NFC/QR CONNECT LinearLayout  -->
+
+                <!-- START SD FUNC/RF_CONFIG/RF_ACCESS LinearLayout  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="7dip" >
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/sdfunc_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_sd_func" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_sd_func_str" >
+                        </TextView>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/rfconf_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_rf_config"></ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_rf_conf_str" >
+
+                        </TextView>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/rfacc_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_rf_access" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_rf_acc_str" >
+
+                        </TextView>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <!-- END SD FUNC/RF_CONFIG/RF_ACCESS LinearLayout  -->
+
+                <!-- START RF_SELECTION/RF_CONFIG/RF_ACCESS LinearLayout  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="7dip" >
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/rfsel_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_rf_sel" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_rf_sel_str" >
+
+                        </TextView>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/rapid_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_rapid" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_rapid_str" >
+
+                        </TextView>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/inv_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_inven" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_inv_str" >
+
+                        </TextView>
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+                <!-- END RF_SELECTION/RF_CONFIG/RF_ACCESS LinearLayout  -->
+
+                <!-- START BARCODE/BATTERY/INFO LinearLayout  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="7dip" >
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/bar_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_barcode" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_bar_str" >
+
+                        </TextView>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/bat_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_battery" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_bat_str" >
+
+                        </TextView>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1" >
+
+                        <ImageButton
+                            android:id="@+id/info_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#33bdff"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_info" >
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:clickable="false"
+                            android:textStyle="bold"
+                            android:text="@string/m_info_str" >
+
+                        </TextView>
+
+                    </FrameLayout>
+
+
+
+                        <!-- START ORIGIN       -->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/ci_logo"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_marginLeft="3dip"-->
+<!--                        android:scaleType="center" />-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/ci_logo2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_marginLeft="3dip"-->
+<!--                        android:scaleType="center" />-->
+                    <!-- END ORIGIN       -->
+
+                </LinearLayout>
+                <!-- END BARCODE/BATTERY/INFO LinearLayout  -->
+
+            </LinearLayout>
+            <!-- END Main LinearLayout  -->
+
+        </FrameLayout>
+        <!-- END Main FrameLayout  -->
+
+        <ListView android:id="@+id/left_drawer"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fadeScrollbars="false"
+            android:choiceMode="singleChoice"
+            android:divider="#555555"
+            android:dividerHeight="1dp"
+            android:background="#207d8b" />
+    
+    </androidx.drawerlayout.widget.DrawerLayout>
+    
+</LinearLayout>

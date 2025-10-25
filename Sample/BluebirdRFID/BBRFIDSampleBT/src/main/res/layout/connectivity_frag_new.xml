@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="co.kr.bluebird.rfid.app.bbrfidbtdemo.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ui_container_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+        android:orientation="vertical">
+
+<!--        &lt;!&ndash; START CONNECT TITLE   &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/title_contain"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+<!--            <TextView-->
+<!--                android:id="@+id/connect_title"-->
+<!--                android:layout_weight="9"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="10sp" />-->
+<!--            <Button-->
+<!--                android:id="@+id/pre_button"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                android:text="@string/prev_btn"-->
+<!--                android:textSize="8sp" />-->
+<!--        </LinearLayout>-->
+<!--        &lt;!&ndash; END CONNECT TITLE   &ndash;&gt;-->
+
+<!--        &lt;!&ndash; START DESCRIPTION TEXT/MAC EDITTEXT/Clear Button/PAIRED Button &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/qr_contain"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/scan_barcode_str"-->
+<!--                android:textSize="11sp" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/mac_edit"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    android:layout_weight="2"-->
+<!--                    android:inputType="none"-->
+<!--                    android:hint="BT MAC"-->
+<!--                    android:textSize="13sp"/>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/clear_button"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    android:layout_weight="8"-->
+<!--                    android:text="@string/clear"-->
+<!--                    android:textSize="12sp" />-->
+<!--            </LinearLayout>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/pair_button"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="fill"-->
+<!--                android:text="@string/pair"-->
+<!--                android:textSize="10sp" />-->
+<!--        </LinearLayout>-->
+<!--        &lt;!&ndash; START DESCRIPTION TEXT/MAC EDITTEXT/Clear Button/PAIRED Button &ndash;&gt;-->
+
+        <!-- START USER ACTION   -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_action_str"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/action_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_str"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+        <!-- END USER ACTION   -->
+
+        <!-- START MESSAGE   -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/received_msg_str"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/message_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_str"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+        <!-- END MESSAGE   -->
+
+        <!-- START CONNECTED DEVICE TEXT/CONNECT(DISCONNECT) BUTTON   -->
+        <LinearLayout
+            android:id="@+id/devtext_connbtn_contain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/connect_state_str"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/connected_device_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/empty_str"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/bt_disconnect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/disconnect_str"
+                    android:textColor="#FF0000"
+                    android:textSize="12sp"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- END CONNECTED DEVICE TEXT/CONNECT(DISCONNECT) BUTTON   -->
+
+        <!-- START BT ON/OFF/GET STATE BUTTON   -->
+        <LinearLayout
+            android:id="@+id/btn_contain_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_enable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enable_str"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/bt_disable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/disable_str"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/bt_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/bt_state_str"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <!-- END BT ON/OFF/GET STATE BUTTON   -->
+
+        <!-- START START/STOP SCAN/PROGRESS/REMOVE ALL BUTTON   -->
+        <LinearLayout
+            android:id="@+id/btn_contain_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_scan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:text="@string/search_str"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/bt_stop_scan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:text="@string/stop_search_str"
+                android:textSize="10sp" />
+
+            <ProgressBar
+                android:id="@+id/scan_progress"
+                android:layout_width="20dip"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dip"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/bt_remove_pair"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:text="@string/remove_pair_str"
+                android:textSize="9sp" />
+        </LinearLayout>
+        <!-- END START/STOP SCAN/PROGRESS/REMOVE ALL BUTTON   -->
+
+        <!-- START NFC/QR BUTTON   -->
+        <LinearLayout
+            android:id="@+id/btn_contain_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_nfc_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:text="@string/connect_nfc"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/bt_qr_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:text="@string/connect_qr"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <!-- END NFC/QR BUTTON   -->
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ui_container_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1.2"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/paired_Devices_str"
+            android:textSize="12sp" />
+
+        <ListView
+            android:id="@+id/device_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true">
+	</ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

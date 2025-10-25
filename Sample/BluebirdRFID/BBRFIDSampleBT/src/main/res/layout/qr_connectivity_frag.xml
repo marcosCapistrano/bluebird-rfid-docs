@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="co.kr.bluebird.rfid.app.bbrfidbtdemo.MainActivity">
+
+    <!-- START Button UI Layout     -->
+    <LinearLayout
+        android:id="@+id/bt_connect_container_uptxt_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+        android:orientation="vertical">
+
+        <!-- START User Action-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_action_str"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/action_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_str"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+        <!-- END User Action-->
+
+        <!-- START Message -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/received_msg_str"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/message_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_str"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <!-- END Message -->
+
+        <!-- START All Button -->
+        <LinearLayout
+            android:id="@+id/bt_connect_container_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- START Connected Device, Connect(Disconnect) Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.9"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/connect_state_str"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+               	    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/connected_device_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/empty_str"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/bt_disconnect"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/disconnect_str"
+                        android:textColor="#FF0000"
+                        android:textSize="12sp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- END Connect Device, Connect/Disconnect Button -->
+
+            <!-- START BT ON/BT OFF/GET STATE Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_enable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/enable_str"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/bt_disable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/disable_str"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/bt_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/bt_state_str"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <!-- END BT ON/BT OFF/GET STATE Button -->
+
+            <!-- START START SCAN/STOP SCAN/REMOVE ALL Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_scan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:text="@string/search_str"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/bt_stop_scan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:text="@string/stop_search_str"
+                    android:textSize="12sp" />
+
+                <ProgressBar
+                    android:id="@+id/scan_progress"
+                    android:layout_width="20dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dip"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/bt_remove_pair"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:text="@string/remove_pair_str"
+                    android:textSize="10sp" />
+            </LinearLayout>
+            <!-- END START SCAN/STOP SCAN/REMOVE ALL Button -->
+
+            <!-- START NFC/QR Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/conn_nfc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:text="@string/connect_nfc"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/conn_qr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:text="@string/connect_qr"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <!-- START NFC/QR Button -->
+        </LinearLayout>
+        <!-- END All Button -->
+
+    </LinearLayout>
+    <!-- END Button UI Layout     -->
+
+    <!-- START ListView UI Layout  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/device_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true"></ListView>
+    </LinearLayout>
+    <!-- END ListView UI Layout  -->
+
+</LinearLayout>

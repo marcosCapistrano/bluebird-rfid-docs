@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="co.kr.bluebird.rfid.app.bbrfidbtdemo.MainActivity">
+
+    <!-- START TEXT/BUTTON UI Layout     -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- START DESCRIPTION TEXT  -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_barcode_str"
+                android:textSize="12sp" />
+            <!-- END DESCRIPTION TEXT  -->
+
+            <!-- START MAC EDITTEXT/Clear Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:textStyle="bold">
+
+                <EditText
+                    android:id="@+id/mac_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="0.6"
+                    android:hint="BT MAC"
+                    android:inputType="none"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:text="@string/clear"
+                    android:textSize="11sp" />
+
+                <!-- START PAIRED Button -->
+                <Button
+                    android:id="@+id/pair_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:text="@string/pair"
+                    android:textSize="11sp" />
+                <!-- END PAIRED Button -->
+            </LinearLayout>
+            <!-- END MAC EDITTEXT/Clear Button -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        </LinearLayout>
+
+        <!-- START User Action-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_action_str"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/action_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_str"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+        <!-- END User Action-->
+
+        <!-- START Message -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/received_msg_str"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/message_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_str"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <!-- END Message -->
+
+        <!-- START MIDDLE(TEXT/BUTTON) VIEW -->
+        <LinearLayout
+            android:id="@+id/bt_connect_container_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- START Connected Device, Connect(Disconnect) Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.9"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/connect_state_str"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/connected_device_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/scan_barcode_str"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/bt_disconnect"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/disconnect_str"
+                        android:textColor="#FF0000"
+                        android:textSize="10sp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- END Connect Device, Connect/Disconnect Button -->
+
+            <!-- START CAMERA BARCODE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/camera_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/start_camera_bar"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+            <!-- END CAMERA BARCODE -->
+
+        </LinearLayout>
+        <!-- END MIDDLE(TEXT/BUTTON) VIEW -->
+
+    </LinearLayout>
+    <!-- END TEXT/BUTTON UI Layout    -->
+
+    <!-- START ListView UI Layout  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/paired_Devices_str"
+            android:textSize="12sp" />
+
+        <ListView
+            android:id="@+id/device_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true"></ListView>
+    </LinearLayout>
+    <!-- END ListView UI Layout  -->
+
+</LinearLayout>

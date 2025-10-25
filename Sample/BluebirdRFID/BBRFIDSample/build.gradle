@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 34
+
+    namespace 'co.kr.bluebird.rfid.app.bbrfiddemo'
+
+    defaultConfig {
+        applicationId "co.kr.bluebird.rfid.app.bbrfiddemo"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 29
+        versionName "4.0.7"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:deprecation" << "-Xlint:unchecked"
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation files('..\\Sled_Library\\bluebird-sled.jar')
+    implementation files('..\\Sled_Library\\bluebird-keymapper.jar')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.media3:media3-exoplayer:1.2.0'
+}
